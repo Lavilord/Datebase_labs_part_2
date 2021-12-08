@@ -6,26 +6,35 @@ import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
-@Table(name = "country")
+@Table(name = "transaction")
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
 @ToString
-public class Country {
+public class Transaction {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Integer id;
 
-    @Column(name = "name", nullable = false)
-    private String name;
+    @Column(name = "bank_account_id", nullable = false)
+    private Integer bankAccountID;
+
+    @Column(name = "transfer_amount", nullable = false)
+    private Float transferAmount;
+
+    @Column(name = "commission", nullable = false)
+    private Float commission;
+
+    @Column(name = "item_id", nullable = false)
+    private Integer itemID;
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Country country = (Country) o;
-        return id != null && Objects.equals(id,country.id);
+        Transaction transaction= (Transaction) o;
+        return id != null && Objects.equals(id,transaction.id);
     }
 
     @Override

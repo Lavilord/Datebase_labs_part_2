@@ -2,6 +2,7 @@ package ua.lviv.iot.model.manager;
 
 import lombok.AllArgsConstructor;
 
+
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Table;

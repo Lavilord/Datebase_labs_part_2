@@ -19,6 +19,11 @@ public class View {
             System.out.println("Choose your table:");
             System.out.println("1: street");
             System.out.println("2: country");
+            System.out.println("3: city");
+            System.out.println("4: client");
+            System.out.println("5: bank account");
+            System.out.println("6: item");
+            System.out.println("7: transaction");
             System.out.println("e: Exit program");
             String table = input.nextLine();
 
@@ -30,6 +35,26 @@ public class View {
                 case "2":
                     entity = Country.class;
                     controller = new CountryController();
+                    break;
+                case "3":
+                    entity = City.class;
+                    controller = new CityController();
+                    break;
+                case "4":
+                    entity = Client.class;
+                    controller = new ClientController();
+                    break;
+                case "5":
+                    entity = BankAccount.class;
+                    controller = new BankAccountController();
+                    break;
+                case "6":
+                    entity = Item.class;
+                    controller = new ItemController();
+                    break;
+                case "7":
+                    entity = Transaction.class;
+                    controller = new TransactionController();
                     break;
                 case "e":
                     System.out.println("_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-\n");
@@ -43,7 +68,7 @@ public class View {
             System.out.println("_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-\n");
             boolean shallWeContinue = true;
             while (shallWeContinue) {
-                System.out.println("Choose your next action with" + entity.getSimpleName() + "table:");
+                System.out.println("Choose your next action with " + entity.getSimpleName() + " table:");
                 System.out.println("1: Create new row");
                 System.out.println("2: Update row");
                 System.out.println("3: Delete row");

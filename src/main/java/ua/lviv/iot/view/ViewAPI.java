@@ -114,8 +114,10 @@ public class ViewAPI<Entity, Id> {
             field.set(entity, Double.parseDouble(input));
         } else if (fieldType == String.class){
             field.set(entity, input);
+        } else if (fieldType == Float.class){
+            field.set(entity, Float.parseFloat(input));
         } else if (fieldType == LocalDate.class){
-            field.set(entity, input);
+            field.set(entity, LocalDate.parse(input));
         } else if (fieldType == LocalTime.class){
             field.set(entity, input);
         }
